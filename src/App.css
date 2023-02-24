@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 80px;
+    height: 40px;
+    background: #bada55;
+    display: block;
+    border-radius: 100px;
+    position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input:checked + label {
+    background: rgb(223, 113, 113);
 }
 
-.App-link {
-  color: #61dafb;
+input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label:active:after {
+    width: 130px;
+}
+
+.show{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 20px;
+}
+
+.show label {
+    margin-bottom: 40px;
+}
+.time{
+    font-size: 30px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+body{
+    background: #ebeef0 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+	-webkit-animation: 10s linear 0s normal none infinite animate;
+	-moz-animation: 10s linear 0s normal none infinite animate;
+	-ms-animation: 10s linear 0s normal none infinite animate;
+	-o-animation: 10s linear 0s normal none infinite animate;
+	animation: 10s linear 0s normal none infinite animate;
+}
+
+@-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-moz-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-ms-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-o-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+.time{
+    color:#fff;
+    font-weight: bold;
+    font-size: 20px;
 }
